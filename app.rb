@@ -2,11 +2,13 @@ require 'rack'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/player'
+require_relative './lib/game.rb'
 
 class Battle < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+
   enable :sessions
 
   get '/' do
@@ -28,7 +30,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    $player2.attack
+    Game.new.attack($player2)
     session[:attacked] = true
     redirect '/play'
   end
