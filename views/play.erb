@@ -1,2 +1,8 @@
 <h1><%= "#{@player1} vs #{@player2}" %></h1>
 <h2>Player 2 Hit Points: 100</h2>
+<form action='/attack' method='POST'>
+  <input type='submit' name='Attack' value='Attack'>
+</form>
+<% if @attacked %>
+  <p>You attacked Player 2</p>
+<% end %>

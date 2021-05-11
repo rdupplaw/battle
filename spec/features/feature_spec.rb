@@ -11,3 +11,12 @@ feature 'Hit points' do
     expect(page).to have_content('Player 2 Hit Points: 100')
   end
 end
+
+feature 'Attack player 2' do
+  scenario 'Attack player 2 and display confirmation' do
+    sign_in_and_play
+    click_button('Attack')
+    expect(page).to have_content('Rob vs James')
+    expect(page).to have_content('You attacked Player 2')
+  end
+end
