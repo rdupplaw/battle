@@ -23,7 +23,6 @@ end
 
 feature 'Decrease hit points' do
   scenario 'Attack reduces Player 2 hit points by 10' do
-    pending('adding hp to player class')
     sign_in_and_play
     click_button('Attack')
     expect(page).to have_content('Player 2 Hit Points: 90')
