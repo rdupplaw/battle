@@ -4,4 +4,8 @@ attr_reader :name, :hp
     @name = name
     @hp = 100
   end
+
+  def attack
+    @hp -= 10
+  end
 end
