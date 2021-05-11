@@ -1,8 +1,9 @@
-
-
-feature 'Testing infrastructure' do
-  it 'when running displays "testing infrastructure working!"' do
+feature 'Two players'  do
+  scenario 'Two players can enter their names and see them on screen' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in('Player 1 Name', with: 'Rob')
+    fill_in('Player 2 Name', with: 'James')
+    click_button('Submit')
+    expect(page).to have_content('Rob vs James')
   end
 end
