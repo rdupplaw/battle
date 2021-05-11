@@ -8,7 +8,7 @@ class Battle < Sinatra::Base
   end
 
   get '/' do
-    'test'
+    'Testing infrastructure working!'
   end
 end
 

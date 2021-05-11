@@ -97,4 +97,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+ENV['RACK_ENV'] = 'test'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require './app.rb'
+Capybara.app = Battle
 end
